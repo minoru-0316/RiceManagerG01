@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  cliant_name: MyString
+  cliant_officer: MyString
+  cliant_email: MyString
+  cliant_tel: 
+  cliant_address: MyString
+  cliant_map_latitude: 1.5
+  cliant_map_longitude: 1.5
+  cliant_map_code: MyText
+  cliant_type: MyString
+  cliant_start_trading: 2019-10-22
+  cliant_memorandum: MyText
+  cliant_delivery_type: MyString
+  cliant_postage: 1
+  cliant_postage_memorandum: MyText
+  cliant_total_sales_without_tax: 1
+  cliant_total_sales_tax_included: 1
+
+two:
+  user_id: 1
+  cliant_name: MyString
+  cliant_officer: MyString
+  cliant_email: MyString
+  cliant_tel: 
+  cliant_address: MyString
+  cliant_map_latitude: 1.5
+  cliant_map_longitude: 1.5
+  cliant_map_code: MyText
+  cliant_type: MyString
+  cliant_start_trading: 2019-10-22
+  cliant_memorandum: MyText
+  cliant_delivery_type: MyString
+  cliant_postage: 1
+  cliant_postage_memorandum: MyText
+  cliant_total_sales_without_tax: 1
+  cliant_total_sales_tax_included: 1

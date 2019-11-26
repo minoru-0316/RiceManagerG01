@@ -1,0 +1,58 @@
+<div class="container">
+
+  <div class="mainBox pb-3 shadow-sm">
+    <div class="pageHeader container shadow-sm mb-4 cliantsTitle">
+      <div class="row">
+        <div class="pageTitle col-sm-3">
+        <h1>顧客一覧</h1>
+        </div>
+
+        <div class="newBtnBox col-sm-8 text-right">
+        <button class="newBtnCliants my-2">
+        <%= link_to '新規顧客登録', new_cliant_path %>
+        </button>
+        </div>
+
+        <div class="col-sm-1"></div>
+
+      </div>
+    </div>
+
+ <div class="tableBox container">
+    <table class="mx-auto">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>顧客名</th>
+          <th>担当者</th>
+          <th>電話番号</th>
+          <th>住所</th>
+          <th>顧客タイプ</th>
+          <th>備考</th>
+          <th>配送区分</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @cliants.each do |cliant| %>
+        <tr>
+          <td><%=link_to cliant.id, cliant %></td>
+          <td><%= cliant.cliant_name %></td>
+          <td><%= cliant.cliant_officer %></td>
+          <td><%= cliant.cliant_tel %></td>
+          <td><%= cliant.cliant_address %></td>
+          <td><%= cliant.cliant_type %></td>
+          <td><%= cliant.cliant_memorandum %></td>
+          <td><%= cliant.cliant_delivery_type %></td>
+
+          <td class="showBtnBox"><button class="mx-1"><%= link_to "詳細", cliant %></button></td>
+          <td class="editBtnBox"><button class="mx-1"><%= link_to "編集", edit_cliant_path(cliant) %></button></td>
+          <td class="deleteBtnBox"><button class="mx-1"><%= link_to "削除",cliant ,method: :delete, data: {confirm: "削除します。この処理は取り消せません。"} %></button></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  </div>
+
+</div>

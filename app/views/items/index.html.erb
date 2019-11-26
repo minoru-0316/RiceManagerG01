@@ -1,0 +1,55 @@
+<div class="container">
+
+  <div class="mainBox pb-3 shadow-sm">
+    <div class="pageHeader container shadow-sm mb-4 itemsTitle">
+      <div class="row">
+        <div class="pageTitle col-sm-3">
+        <h1 class="itemsH1">アイテム一覧</h1>
+        </div>
+
+        <div class="newBtnBox col-sm-8 text-right">
+        <button class="newBtnItems my-2">
+        <%= link_to '新規アイテム登録', new_item_path %>
+        </button>
+        </div>
+
+        <div class="col-sm-1"></div>
+
+      </div>
+    </div>
+ <div class="tableBox container">
+    <table class="mx-auto">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>商品名</th>
+          <th>単価<br>（税別）</th>
+          <th>単価<br>（税込み:8%）</th>
+          <th>備考</th>
+          <th>累計出荷数</th>
+          <th>累計売上高<br>（税別）</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @items.each do |item| %>
+        <tr>
+          <td><%=link_to item.id, item %></td>
+          <td><%= item.item_name %></td>
+          <td><%= "#{item.item_price_without_tax}円" %></td>
+          <td><%= "#{(item.item_price_without_tax*1.08).floor}円" %></td>
+          <td><%= item.item_memorandum %></td>
+          <td><%= item.item_shipment_total %></td>
+          <td><%= item.item_total_sales_without_tax %></td>
+
+          <td class="showBtnBox"><button class="mx-1"><%= link_to "詳細", item %></button></td>
+          <td class="editBtnBox"><button class="mx-1"><%= link_to "編集", edit_item_path(item) %></button></td>
+          <td class="deleteBtnBox"><button class="mx-1"><%= link_to "削除", item ,method: :delete, data: {confirm: "削除します。この処理は取り消せません。"} %></button></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>
+</div>
+
+
+</div>

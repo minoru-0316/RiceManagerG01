@@ -1,0 +1,110 @@
+<div class="container mb-5">
+
+
+<%= form_with(model: @sale, local: true) do |form| %>
+  <% if @sale.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sale.errors.count, "error") %> prohibited this sale from being saved:</h2>
+
+      <ul>
+      <% @sale.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <% end %>
+
+
+<div class="mainBox pb-3 shadow-sm">
+  <div class="pageHeader container shadow-sm mb-4 salesTitle">
+    <div class="row">
+      <div class="pageTitle col-sm-5">
+      <h1>登録Jobの編集</h1>
+      </div>
+      
+      <div class="newBtnBox col-sm-7 text-right">
+      <button class="newBtnSales m-2 ">
+        <%= link_to 'Job一覧へ戻る', sales_path %> 
+      </button>
+  </div>
+
+  </div>
+</div>
+
+<div class="container">
+
+
+<%= form_for(@sale) do |f| %>
+
+  <div class="field">
+    <%= f.label :入力者id（要修正：ここはdeviseを入れてcurrent_user_idで取得） %> 
+    <%= f.text_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :納品日 %>
+    <%= f.datetime_select :start_time %>
+  </div>
+
+  <div class="field">
+    <%= f.label :納品者id %>
+    <%= f.collection_select(:seller_name, @users, :id, :email, {prompt: "納品者を選択"} ) %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :ジョブ %>
+    <%= f.select :job_type, [ ["配達","配達"], ["郵送","郵送"], ["店頭渡し", "店頭渡し" ]], prompt: "納品形態を選択してください" %>
+  </div>
+
+  <div class="field">
+  <%= f.label :顧客id %>
+  <%= f.collection_select(:cliant_id, @cliants, :id, :cliant_name, {prompt: "顧客名を選択"} ) %>
+</div>
+
+
+  <div class="field">
+    <%= f.label :商品id %>
+    <%= f.collection_select(:item_id, @items, :id, :item_name, {prompt: "商品idを選択"} ) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :商品名 %>
+    <%= f.collection_select(:item_name, @items, :item_name, :item_name, {prompt: "商品idと同じ名称を選択"} ) %>
+  </div>
+
+
+
+  <div class="field">
+    <%= f.label :納品数（個） %>
+    <%= f.number_field :sale_item_count %>
+  </div>
+
+  <div class="field">
+    <%= f.label :合計重量（kg） %>
+    <%= f.number_field :sale_item_amount %>
+  </div>
+
+  <div class="field">
+    <%= f.label :精米id %>
+    <%= f.collection_select(:polish_id, @polishes, :id, :polish_day, {prompt: "使用する精米を選択"} ) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :備考・メモ %>
+    <%= f.text_area :sale_memorandum %>
+  </div>
+
+  <div class="field">
+    <%= f.label :is_done, "完了したらチェックする" %><br>
+    <%= f.check_box :is_done %><br>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+</div>
+</div>

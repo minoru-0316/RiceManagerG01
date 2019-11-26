@@ -1,0 +1,57 @@
+<div class="container">
+
+  <div class="mainBox pb-3 shadow-sm">
+    <div class="pageHeader container shadow-sm mb-4 farmersTitle">
+      <div class="row">
+        <div class="pageTitle col-sm-3">
+        <h1>生産者一覧</h1>
+        </div>
+
+        <div class="newBtnBox col-sm-8 text-right">
+        <button class="newBtnfarmers my-2">
+        <%= link_to '新規生産者登録', new_farmer_path %>
+        </button>
+        </div>
+
+        <div class="col-sm-1"></div>
+
+      </div>
+    </div>
+ <div class="tableBox container">
+    <table class="mx-auto">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>生産者名</th>
+          <th>生産者email</th>
+          <th>電話番号</th>
+          <th>エリア</th>
+          <th>住所</th>
+          <th>備考</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @farmers.each do |farmer| %>
+        <tr>
+          <td><%=link_to farmer.id, farmer %></td>
+          <td><%= farmer.farmer_name %></td>
+          <td><%= farmer.farmer_email %></td>
+          <td><%= farmer.farmer_tel %></td>
+          <td><%= farmer.farmer_area %></td>
+          <td><%= farmer.farmer_address %></td>
+          <td><%= farmer.farmer_memorandum %></td>
+
+          <td class="showBtnBox"><button class="mx-1"><%= link_to "詳細", farmer %></button></td>
+          <td class="editBtnBox"><button class="mx-1"><%= link_to "編集", edit_farmer_path(farmer) %></button></td>      
+          <td class="deleteBtnBox"><button class="mx-1"><%= link_to "削除", farmer ,method: :delete, data: {confirm: "削除します。この処理は取り消せません。"} %></button></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+</div>
+
+

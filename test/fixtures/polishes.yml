@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  polish_amount_total: 1
+  farmer_id: 1
+  polish_1_farmer_id: 1
+  polish_1_farmer: MyString
+  polish_2_farmer_id: 1
+  polish_2_farmer: MyString
+  polish_3_farmer_id: 1
+  polish_3_farmer: MyString
+  polish_4_farmer_id: 1
+  polish_4_farmer: MyString
+  polish_5_farmer_id: 1
+  polish_5_farmer: MyString
+  polish_memorandum: MyText
+
+two:
+  user_id: 1
+  polish_amount_total: 1
+  farmer_id: 1
+  polish_1_farmer_id: 1
+  polish_1_farmer: MyString
+  polish_2_farmer_id: 1
+  polish_2_farmer: MyString
+  polish_3_farmer_id: 1
+  polish_3_farmer: MyString
+  polish_4_farmer_id: 1
+  polish_4_farmer: MyString
+  polish_5_farmer_id: 1
+  polish_5_farmer: MyString
+  polish_memorandum: MyText

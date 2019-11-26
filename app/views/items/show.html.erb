@@ -1,0 +1,37 @@
+<div class="container mb-5">
+<p id="notice"><%= notice %></p>
+
+
+<div class="mainBox pb-3 shadow-sm">
+  <div class="pageHeader container shadow-sm mb-4 itemsTitle">
+    <div class="row">
+      <div class="pageTitle col-sm-4">
+      <h1 class="itemsH1">商品　の詳細情報</h1>
+      </div>
+
+      <div class="newBtnBox col-sm-8 text-right">
+      <button class="newBtnSales m-2 ">
+        <%= link_to "商品一覧へ戻る" , items_path%>
+      </button>
+      <button class="newBtnSales m-2 ">
+        <%= link_to "編集" , edit_item_path(@item) %> 
+      </button>
+      </div>
+  </div>
+</div>
+
+<div class="container">
+
+
+
+<h2> 商品名：<%= @item.item_name %> </h2>
+<p> ID：<%= @item.id %> </p>
+<p> 単価（税別）：<%= @item.item_price_without_tax %> </p>
+<p> 単価（税込み：8％）：<%= (@item.item_price_without_tax*1.08).floor %> </p>
+<p> 備考：<%= @item.item_memorandum %> </p>
+<p> 累計出荷数：<%= @item.item_shipment_total %> </p>
+<p> 累計売上（税別）：<%= @item.item_total_sales_without_tax %> </p>
+<p> 累計売上（税込み：8％）：<%= @item.item_total_sales_tax_included %> </p>
+
+  </div>
+</div>

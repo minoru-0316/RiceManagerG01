@@ -1,0 +1,46 @@
+<div class="container mb-5">
+<p id="notice"><%= notice %></p>
+
+
+<div class="mainBox pb-3 shadow-sm">
+  <div class="pageHeader container shadow-sm mb-4 stocksTitle">
+    <div class="row">
+      <div class="pageTitle col-sm-4">
+      <h1>在庫　の詳細情報</h1>
+
+      </div>
+
+      <div class="newBtnBox col-sm-8 text-right">
+      <button class="newBtnSales m-2 ">
+        <%= link_to '在庫一覧へ戻る', stocks_path %> 
+      </button>
+      <button class="newBtnSales m-2 ">
+        <%= link_to "編集" , edit_stock_path(@stock) %> 
+      </button>
+      </div>
+  </div>
+</div>
+
+<div class="container">
+
+
+<h2> 入荷日：<%= @stock.stock_arrivalday.strftime("%Y年\n%m月%d日") %> </h2>
+
+<p> 生産者ID：<%= @stock.id %> </p>
+<p> 生産者：<%= @stock.farmer.farmer_name %> </p>
+<p> 銘柄：<%= @stock.stock_brand %> </p>
+<p> 仕入れ量（袋）：<%= @stock.stock_purchased_amount %> </p>
+<p> 仕入れ単価（税別）：<%= @stock.stock_price_without_tax %> </p>
+<p> 仕入れ単価（税込み：８％）：<%= @stock.stock_price_tax_included %> </p>
+<p> 品質：<%= @stock.stock_quality %> </p>
+<p> 備考：<%= @stock.stock_memorandum %> </p>
+<hr>
+<p> メールアドレス：<%= @stock.farmer.farmer_email %> </p>
+<p> 電話番号：<%= @stock.farmer.farmer_tel %>  </p>
+<p> 住所： <%= @stock.farmer.farmer_address %> </p>
+<p> 緯度： <%= @stock.farmer.farmer_map_latitude %> </p>
+<p> 経度： <%= @stock.farmer.farmer_map_longitude %> </p>
+<p> gmap： <%= @stock.farmer.farmer_map_code %> </p>
+
+  </div>
+</div>

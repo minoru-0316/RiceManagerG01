@@ -1,0 +1,90 @@
+<div class="container">
+
+
+<div class="mainBox pb-3 shadow-sm">
+  <div class="pageHeader container shadow-sm mb-4 salesTitle">
+    <div class="row">
+      <div class="pageTitle col-sm-3">
+      <h1>Job一覧</h1>
+      </div>
+
+      <div class="newBtnBox col-sm-8 text-right">
+      <button class="newBtnSales my-2">
+      <%= link_to '新規Job作成', new_sale_path %>
+      </button>
+      </div>
+      <div class="col-sm-1"></div>
+  </div>
+</div>
+
+ <div class="tableBox container">
+    <table class="mx-auto">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>納品日</th>
+          <th>Job</th>
+          <th>顧客名</th>
+          <th>商品名</th>
+          <th>納品数 <br>（個）</th>
+          <th>合計重量 <br>（kg）</th>
+          <th>備考・メモ</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @sales_unFinished.each do |sale| %>
+          <tr>
+            <td class="px-1"><%= link_to sale.id, sale %></td>
+            <td><%= sale.start_time.strftime("%m月%d日") %></td>
+            <td><%= sale.job_type %></td>
+            <td><%= sale.cliant_name %></td>
+            <td><%= sale.item_name %></td>
+            <td><%= "#{sale.sale_item_count}個" %></td>
+            <td><%= "#{sale.sale_item_amount} kg" %></td>
+            <td><%= sale.sale_memorandum %></td>
+
+            <td class="showBtnBox"><button class="mx-1"><%= link_to '詳細', sale %></button></td>
+        <% if current_user.id == sale.user_id %>
+            <td class="editBtnBox"><button class="mx-1"><%= link_to '編集', edit_sale_path(sale) %></button></td>
+            <td class="deleteBtnBox"><button class="mx-1"><%= link_to '削除', sale, method: :delete, data: { confirm: '削除します。この処理は取り消せません。' } %></button></td>
+          </tr>
+        <% end %>
+      <% end %>
+      </tbody>
+    </table>
+    <hr>
+ </div>
+</div>
+
+<br>
+
+
+<hr class="shadow-sm">
+<div class="container mb-5">
+
+<%= month_calendar events: @sales do |date, sales| %>
+    <%= date.strftime("\n%m月%d日") %>
+
+  <% sales.each do |sale| %>
+    <div>
+    <% if sale.is_done == false %>
+      <div class="bg-warning">
+        <%= link_to "●#{sale.job_type}", sale %>
+        <%= link_to sale.cliant_name, sale %>
+      </div>
+    <% else %>
+      <div>
+        <%= link_to "●#{sale.job_type}", sale ,class:"text-dark" %>
+        <%= link_to sale.cliant_name, sale ,class:"text-dark" %>
+      </div>
+    <% end %>
+    </div>
+  <% end %>
+<% end %>
+<p>※背景がオレンジ色の項目は未完了Job</p>
+
+</div>
+
+</div>
+

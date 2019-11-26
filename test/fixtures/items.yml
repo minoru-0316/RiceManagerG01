@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  item_name: MyString
+  item_price_without_tax: 1
+  item_price_tax_included: 1
+  item_memorandum: MyText
+  item_shipment_total: 1
+  item_total_sales_without_tax: 1
+  item_total_sales_tax_included: 1
+
+two:
+  user_id: 1
+  item_name: MyString
+  item_price_without_tax: 1
+  item_price_tax_included: 1
+  item_memorandum: MyText
+  item_shipment_total: 1
+  item_total_sales_without_tax: 1
+  item_total_sales_tax_included: 1

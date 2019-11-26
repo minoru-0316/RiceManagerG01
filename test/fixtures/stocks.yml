@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  polish_id: 1
+  stock_farmer_name: MyString
+  farmer_id: 1
+  stock_brand: MyString
+  stock_purchased_amount: 1
+  stock_used_amount: 1
+  stock_present_amount: 1
+  stock_price_without_tax: 1
+  stock_price_tax_included: 1
+  stock_quality: MyString
+  stock_memorandum: MyText
+
+two:
+  user_id: 1
+  polish_id: 1
+  stock_farmer_name: MyString
+  farmer_id: 1
+  stock_brand: MyString
+  stock_purchased_amount: 1
+  stock_used_amount: 1
+  stock_present_amount: 1
+  stock_price_without_tax: 1
+  stock_price_tax_included: 1
+  stock_quality: MyString
+  stock_memorandum: MyText

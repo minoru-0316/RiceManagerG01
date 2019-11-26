@@ -1,0 +1,41 @@
+<div class="container mb-5">
+<p id="notice"><%= notice %></p>
+
+
+<div class="mainBox pb-3 shadow-sm">
+  <div class="pageHeader container shadow-sm mb-4 farmersTitle">
+    <div class="row">
+      <div class="pageTitle col-sm-4">
+      <h1>生産者 の詳細情報</h1>
+      </div>
+
+      <div class="newBtnBox col-sm-8 text-right">
+      <button class="newBtnSales m-2 ">
+        <%= link_to "生産者一覧へ戻る" , farmers_path %> 
+      </button>
+      <button class="newBtnSales m-2 ">
+        <%= link_to "編集" , edit_farmer_path(@farmer) %> 
+      </button>
+      </div>
+  </div>
+</div>
+
+<div class="container">
+
+
+
+
+<h2> 生産者名：<%= @farmer.farmer_name %> </h2>
+<p> エリア：<%= @farmer.farmer_area %> </p>
+<p> 住所：<%= @farmer.farmer_address %> </p>
+<p> メールアドレス：<%= @farmer.farmer_email %> </p>
+<p> 電話番号：<%= @farmer.farmer_tel %> </p>
+<p> 緯度：<%= @farmer.farmer_map_latitude %> </p>
+<p> 経度：<%= @farmer.farmer_map_longitude %> </p>
+<p> gmap：<%= @farmer.farmer_map_code %> </p>
+<p> 備考：<%= @farmer.farmer_memorandum %> </p>
+
+</div>
+
+
+</div>

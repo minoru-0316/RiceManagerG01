@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RiceManagerG</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <header class="mb-3 ">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top shadow-sm py-3">
+    <img src="/seimaiApp_logo.jpg" alt="ロゴマーク" width="200px">
+
+      <% if user_signed_in? %>
+          <div class="collapse navbar-collapse" id="navbarsDefault">
+            <ul class="navbar-nav mr-auto mt-2 ml-3">
+              <li class="nav-item ">
+                <button type="button" class="headerBtn btn btn-lg mx-3 poilshBtn">
+                  <%= link_to '精米一覧', polishes_path ,class:"headerTitle" %>
+                </button>
+              </li>
+              <li class="nav-item ">
+                <button type="button" class="headerBtn btn btn-lg mx-3 jobBtn">
+                  <%= link_to 'Job一覧', sales_path ,class:"headerTitle" %>
+                </button>
+              </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle btn btn-sm ml-3 text-light dropMenu" href="tutorial.html" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">管理メニュー</a>
+                  <div class="dropdown-menu" aria-labelledby="dropdown01">
+                      <span class="dropdown-item"><%= link_to 'アイテム一覧', items_path ,class:"headerDropdownTitle"%></span>
+                      <span class="dropdown-item"><%= link_to '顧客一覧', cliants_path ,class:"headerDropdownTitle"%></span>
+                      <span class="dropdown-item"><%= link_to '在庫一覧', stocks_path ,class:"headerDropdownTitle"%></span>
+                      <span class="dropdown-item"><%= link_to '生産者一覧', farmers_path ,class:"headerDropdownTitle"%></span>
+                    </div>
+                </li>
+            </ul>
+          </div>      
+          
+          <strong> ユーザーID:<%= current_user.id %> </strong>
+
+          <div>
+            <button type="button" class="headerBtn btn btn-lg mx-3 logoutBtn">
+              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete ,class:"headerTitle"  %>
+            </button>
+          </div>
+
+      <% else %>
+        <button type="button" class="headerBtn btn btn-lg mx-3 resistBtn">
+          <%= link_to 'registration', new_user_registration_path ,class:"headerTitle" %>
+        </button>
+        <button type="button" class="headerBtn btn btn-lg mx-3 loginBtn">
+          <%= link_to 'login', new_user_session_path ,class:"headerTitle" %>
+        </button>
+      <% end %>
+    </nav>
+
+  </header>
+
+    <%# devise用アラート   %>
+    <div class="container">
+      <div class="time-limit">
+        <span class="notice"><%= notice %></span>
+        <span class="alert"><%= alert %></span>
+      </div>
+    </div>
+
+
+    <%= yield %>
+
+    <%= render 'layouts/footer' %>
+  </body>
+</html>

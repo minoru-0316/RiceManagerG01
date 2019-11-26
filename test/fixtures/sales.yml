@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  job_type: MyString
+  cliant_name: MyString
+  cliant_id: 1
+  material_infomation: MyString
+  item_name: MyString
+  sale_item_count: 1
+  sale_item_amount: 1
+  polish_id: 1
+  item_id: 1
+  sale_memorandum: MyText
+  start_time: 2019-10-24 12:02:04
+  sale_job_title: MyString
+
+two:
+  user_id: 1
+  job_type: MyString
+  cliant_name: MyString
+  cliant_id: 1
+  material_infomation: MyString
+  item_name: MyString
+  sale_item_count: 1
+  sale_item_amount: 1
+  polish_id: 1
+  item_id: 1
+  sale_memorandum: MyText
+  start_time: 2019-10-24 12:02:04
+  sale_job_title: MyString

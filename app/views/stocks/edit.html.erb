@@ -1,0 +1,82 @@
+<div class="container mb-5">
+
+
+<%= form_with(model: @stock, local: true) do |form| %>
+  <% if @stock.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@stock.errors.count, "error") %> prohibited this stock from being saved:</h2>
+
+      <ul>
+      <% @stock.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <% end %>
+
+
+<div class="mainBox pb-3 shadow-sm">
+  <div class="pageHeader container shadow-sm mb-4 stocksTitle">
+    <div class="row">
+      <div class="pageTitle col-sm-5">
+      <h1>在庫情報の編集</h1>
+
+      </div>
+      
+      <div class="newBtnBox col-sm-7 text-right">
+      <button class="newBtnSales m-2 ">
+        <%= link_to '仕入れ（在庫）一覧へ', stocks_path %>
+      </button>
+  </div>
+
+  </div>
+</div>
+
+<div class="container mb-5">
+
+
+
+<%= form_for(@stock) do |f| %>
+<div class="field">
+  <%= f.label :入荷日 %><br>
+  <%= f.datetime_select :stock_arrivalday %>
+</div>
+<div class="field">
+  <%= f.label :生産者 %><br>
+  <%= f.collection_select(:farmer_id, @farmers, :id, :farmer_name ) %>
+</div>
+<div class="field">
+  <%= f.label :銘柄 %><br>
+  <%= f.text_field :stock_brand %>
+</div>
+<div class="field">
+  <%= f.label :仕入れ量（袋） %><br>
+  <%= f.text_field :stock_purchased_amount %>
+</div>
+<div class="field">
+  <%= f.label :仕入れ単価（税別） %><br>
+  <%= f.text_field :stock_price_without_tax %>
+</div>
+<div class="field">
+  <%= f.label :仕入れ単価（税込み：8％） %><br>
+  <%= f.text_field :stock_price_tax_included %>
+</div>
+<div class="field">
+  <%= f.label :品質 %><br>
+  <%= f.text_area :stock_quality %>
+</div>
+<div class="field">
+  <%= f.label :備考 %><br>
+  <%= f.text_area :stock_memorandum %>
+</div>
+
+<br>
+<div class="actions">
+  <%= f.submit "在庫情報を更新" %>
+</div>
+<% end %>
+
+
+</div>
+</div>

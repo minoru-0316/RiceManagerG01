@@ -1,0 +1,86 @@
+<div class="container mb-5">
+
+
+<div class="mainBox pb-3 shadow-sm">
+  <div class="pageHeader container shadow-sm mb-4 cliantsTitle">
+    <div class="row">
+      <div class="pageTitle col-sm-5">
+      <h1>新規顧客の登録</h1>
+
+      </div>
+      
+      <div class="newBtnBox col-sm-7 text-right">
+      <button class="newBtnSales m-2 ">
+        <%= link_to '顧客一覧へ戻る', cliants_path %>
+      </button>
+  </div>
+  </div>
+</div>
+
+<div class="container">
+
+
+
+
+
+<%= form_for(@cliant) do |f| %>
+<div class="field">
+  <%= f.label :顧客名 %><br>
+  <%= f.text_field :cliant_name %>
+</div>
+<div class="field">
+  <%= f.label :タイプ %><br>
+  <%= f.text_field :cliant_type %>
+</div>
+<div class="field">
+  <%= f.label :担当者 %><br>
+  <%= f.text_field :cliant_officer %>
+</div>
+<div class="field">
+  <%= f.label :メールアドレス %><br>
+  <%= f.email_field :cliant_email %>
+</div>
+<div class="field">
+  <%= f.label :電話番号 %><br>
+  <%= f.text_field :cliant_tel %>
+</div>
+<div class="field">
+  <%= f.label :備考 %><br>
+  <%= f.text_area	 :cliant_memorandum %>
+</div>
+<div class="field">
+  <%= f.label :配送区分 %><br>
+  <%= f.text_field :cliant_delivery_type %>
+</div>
+<div class="field">
+  <%= f.label :送料 %><br>
+  <%= f.text_field :cliant_postage %>
+</div>
+<div class="field">
+  <%= f.label :配送備考 %><br>
+  <%= f.text_area	 :cliant_postage_memorandum %>
+</div>
+<div class="field">
+  <%= f.label :住所 %><br>
+  <%= f.text_field :cliant_address %>
+</div>
+<div class="field">
+  <%= f.label :緯度 %><br>
+  <%= f.text_field :cliant_map_latitude %>
+</div>
+<div class="field">
+  <%= f.label :経度 %><br>
+  <%= f.text_field :cliant_map_longitude %>
+</div>
+<div class="field">
+  <%= f.label :gmapコード %><br>
+  <%= f.text_field :cliant_map_code %>
+</div>
+<br>
+<div class="actions">
+  <%= f.submit "新規顧客を登録"%>
+</div>
+<% end %>
+
+</div>
+</div>

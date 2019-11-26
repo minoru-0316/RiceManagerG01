@@ -1,0 +1,45 @@
+<div class="container mb-5">
+
+
+<div class="mainBox pb-3 shadow-sm">
+  <div class="pageHeader container shadow-sm mb-4 itemsTitle">
+    <div class="row">
+      <div class="pageTitle col-sm-5">
+      <h1 class="itemsH1">新規商品の登録</h1>
+
+      </div>
+      
+      <div class="newBtnBox col-sm-7 text-right">
+      <button class="newBtnSales m-2 ">
+        <%= link_to '商品一覧へ戻る', items_path %>
+
+      </button>
+  </div>
+  </div>
+</div>
+
+<div class="container">
+
+
+<%= form_for(@item) do |f| %>
+<div class="field">
+  <%= f.label :商品名 %><br>
+  <%= f.text_field :item_name %>
+</div>
+<div class="field">
+  <%= f.label :単価（税別） %><br>
+  <%= f.text_field :item_price_without_tax %>
+</div>
+<div class="field">
+  <%= f.label :備考 %><br>
+  <%= f.text_area :item_memorandum %>
+</div>
+<br>
+<div class="actions">
+  <%= f.submit "新規商品を登録"%>
+</div>
+<% end %>
+
+
+</div>
+</div>

@@ -1,0 +1,110 @@
+<div class="container mb-5">
+<p id="notice"><%= notice %></p>
+
+
+<div class="mainBox pb-3 shadow-sm">
+  <div class="pageHeader container shadow-sm mb-4 salesTitle">
+    <div class="row">
+      <div class="pageTitle col-sm-4">
+      <h1>登録Jobの詳細</h1>
+      </div>
+
+      <div class="newBtnBox col-sm-8 text-right">
+      <button class="newBtnSales m-2 ">
+        <%= link_to 'Job一覧へ戻る', sales_path %> 
+      </button>
+
+      <% if current_user.id == @sale.user_id %>
+        <button class="newBtnSales m-2 ">
+          <%= link_to "編集" , edit_sale_path(@sale) %> 
+        </button>
+      <% end %>
+
+      </div>
+  </div>
+</div>
+
+<div class="container">
+
+<div>完了フラグ：
+    <% if @sale.is_done == false %>
+    <p class="text-danger">未完了</p>
+    <% else %>
+    <p class="text-primary">完了済み</p>
+    <% end %>
+</div>
+
+<p>
+  <strong>ID：</strong>
+  <%= @sale.id %>
+</p>
+
+<p>
+  <strong>入力者id：</strong>
+  <%= @sale.user_id %>
+</p>
+
+<p>
+  <strong>納品日:</strong>
+  <%= @sale.start_time.strftime("%Y年\n%m月%d日") %>
+</p>
+
+
+<p>
+  <strong>納品者id:</strong>
+  <%= @sale.seller_name %>
+</p>
+
+<p>
+  <strong>ジョブ:</strong>
+  <%= @sale.job_type %>
+</p>
+
+<p>
+  <strong>顧客id:</strong>
+  <%=link_to @sale.cliant_id, @cliant %>
+</p>
+
+<p>
+  <strong>顧客名:</strong>
+  <%= link_to @cliant.cliant_name, @cliant %>
+</p>
+
+
+<p>
+  <strong>商品id:</strong>
+  <%= link_to @sale.item_id, @item %>
+</p>
+
+<p>
+  <strong>商品名:</strong>
+  <%= link_to @item.item_name, @item %>
+</p>
+
+<p>
+  <strong>納品数:</strong>
+  <%= @sale.sale_item_count %>
+  <strong>個</strong>
+</p>
+
+<p>
+  <strong>合計重量:</strong>
+  <%= @sale.sale_item_amount %>
+  <strong>kg</strong>
+</p>
+
+<p>
+  <strong>精米情報:</strong>
+  <%= link_to "#{@polish.polish_day.strftime("%Y年\n%m月%d日")}の精米分", @polish %>
+
+</p>
+
+<p>
+  <strong>備考・メモ:</strong><br>
+  <textarea name="" id="" cols="30" rows="3">
+  <%= @sale.sale_memorandum %>
+  </textarea>
+</p>
+</div>
+
+</div>
