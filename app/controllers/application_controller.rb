@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-    before_action :authenticate_user!
+    # before_action :authenticate_user!
 
     # def after_sign_in_path_for(resource)
     #   items_path # ログイン後に遷移するpathを設定
