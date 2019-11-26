@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  devise_for :users, controllers: { registrations: 'users/registrations' }
+  # devise_for :users, controllers: { registrations: 'users/registrations' }
+  devise_for :users
   root to: 'sales#index' 
 
   resource :mypage
@@ -9,7 +10,7 @@ Rails.application.routes.draw do
   get 'item_sales/destroy'
   get 'stock_polishes/create'
   get 'stock_polishes/destroy'
-  get "/" => "home#top"
+  # get "/" => "home#top"
 
 
   resources :sales
