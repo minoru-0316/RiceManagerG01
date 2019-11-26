@@ -24,7 +24,6 @@
           <th>ID</th>
           <th>商品名</th>
           <th>単価<br>（税別）</th>
-          <th>単価<br>（税込み:8%）</th>
           <th>備考</th>
           <th>累計出荷数</th>
           <th>累計売上高<br>（税別）</th>
@@ -36,7 +35,6 @@
           <td><%=link_to item.id, item %></td>
           <td><%= item.item_name %></td>
           <td><%= "#{item.item_price_without_tax}円" %></td>
-          <td><%= "#{(item.item_price_without_tax*1.08).floor}円" %></td>
           <td><%= item.item_memorandum %></td>
           <td><%= item.item_shipment_total %></td>
           <td><%= item.item_total_sales_without_tax %></td>
