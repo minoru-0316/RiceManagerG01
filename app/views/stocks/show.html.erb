@@ -24,7 +24,8 @@
 <div class="container">
 
 
-<h2> 入荷日：<%= @stock.stock_arrivalday.strftime("%Y年\n%m月%d日") %> </h2>
+<h2> 入荷日：<%= @stock.stock_arrivalday.to_s[0, 10]  %>
+ </h2>
 
 <p> 生産者ID：<%= @stock.id %> </p>
 <p> 生産者：<%= @stock.farmer.farmer_name %> </p>
