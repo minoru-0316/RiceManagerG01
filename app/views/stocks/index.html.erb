@@ -48,7 +48,7 @@
       <% @stocks.each do |stock| %>
       <tr>
         <td><%=link_to stock.id, stock %></td>
-        <td><%= stock.stock_arrivalday %></td>
+        <td><%= stock.stock_arrivalday.to_s(:ymd) %></td>
         <td><%= stock.farmer_id %></td>
         <td><%= stock.farmer.farmer_name %></td>
 
