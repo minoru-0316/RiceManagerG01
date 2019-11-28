@@ -29,7 +29,9 @@ class StocksController < ApplicationController
       
       def show
         @stock = Stock.find(params[:id])
-        @farmer = Farmer.find_by(params[:id])
+        # @farmer = Farmer.find_by(params[:id])
+        @farmer = Farmer.find(@stock[:farmer_id])
+
       end
 
 
