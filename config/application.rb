@@ -17,11 +17,11 @@ module RiceManagerG
     # the framework and any gems in your application.
 
     #　日本時間にする
-    # config.time_zone = 'Tokyo'
-    config.time_zone = 'Asia/Tokyo'
+    config.time_zone = 'Tokyo'
+    # config.time_zone = 'Asia/Tokyo'
 
-    # デフォルトのロケールを日本（ja）に設定
-    config.i18n.default_locale = :ja
+    # # デフォルトのロケールを日本（ja）に設定
+    # config.i18n.default_locale = :ja
 
   end
 
