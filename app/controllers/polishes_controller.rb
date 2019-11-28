@@ -6,7 +6,7 @@ class PolishesController < ApplicationController
   def index
     @polishes = Polish.all.order('created_at DESC')
 
-    @stock = Stock.find_by(params[:id])
+    # @stock = Stock.find_by(params[:id])
   end
 
 
