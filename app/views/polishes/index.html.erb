@@ -46,7 +46,7 @@
         <% @polishes.each do |polish| %>
         <tr>
           <td><%=link_to polish.id, polish %></td>
-          <td><%= polish.polish_day.strftime("%m月%d日") %></td>
+          <td><%= polish.polish_day %></td>
           <td class="strong bg-info" style="font-size:24px"><%= polish.polish_amount_total%></td>
           <td><%= polish.polish_1_farmer %></td>
           <td><%= polish.polish_1_amount %></td>

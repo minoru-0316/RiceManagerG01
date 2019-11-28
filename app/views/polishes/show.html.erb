@@ -24,7 +24,7 @@
 
 <h1>精米　の詳細情報</h1>
 
-<p> 精米日：<%= @polish.polish_day.strftime("%Y年\n%m月%d日") %> </p>
+<p> 精米日：<%= @polish.polish_day %> </p>
 <p> 精米id：<%= @polish.id %> </p>
 <p class="strong" style="font-size:24px"> 精米数（袋）：<%= @polish.polish_amount_total %> </p>
 <hr>
@@ -36,7 +36,7 @@
   <div class="row">
     <div class="col-sm-4">
       <h3>内訳−１</h3>
-       <p> 生産者id：<%=@polish.polish_1_farmer_id %> </p>
+       <p> 生産者id：<%= @polish.polish_1_farmer_id %> </p>
        <p> 生産者名：<%= @polish.polish_1_farmer %> </p>
        <p> 銘柄：<%= @polish.polish_1_brand %> </p>
        <p>使用数（袋）：<%= @polish.polish_1_amount %>　</p>

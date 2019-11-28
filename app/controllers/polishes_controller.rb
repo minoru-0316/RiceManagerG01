@@ -28,8 +28,9 @@ class PolishesController < ApplicationController
   def show
     @polish = Polish.find(params[:id])
 
-    @stock = Stock.find_by(params[:id])
-    # @stock = Stock.find_by([:stock_id])
+    # @stock = Stock.find_by(params[:id])
+    @stock = Stock.find(@polish[:id])
+
 
 
   end
