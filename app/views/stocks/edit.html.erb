@@ -53,14 +53,19 @@
 <div class="field">
   <%= f.label :仕入れ量（袋） %><br>
   <%= f.text_field :stock_purchased_amount %>
+  <span>袋</span> 
 </div>
+
 <div class="field">
   <%= f.label :仕入れ単価（税別） %><br>
   <%= f.text_field :stock_price_without_tax %>
+  <span>円</span> 
 </div>
+
 <div class="field">
   <%= f.label :仕入れ単価（税込み：8％） %><br>
   <%= f.text_field :stock_price_tax_included %>
+  <span>円</span> 
 </div>
 <div class="field">
   <%= f.label :品質 %><br>

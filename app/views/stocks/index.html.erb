@@ -33,8 +33,6 @@
       <tr>
         <th>ID</th>
         <th>入荷日</th>
-        <th>生産者id</th>
-        <th>生産者</th>
         <th>銘柄</th>
         <th>仕入れ量（袋）</th>
         <th>使用数（袋）</th>
@@ -49,13 +47,10 @@
       <tr>
         <td><%=link_to stock.id, stock %></td>
         <td><%= stock.stock_arrivalday %></td>
-        <td><%= stock.farmer_id %></td>
-        <td><%= stock.farmer.farmer_name %></td>
-
         <td><%= stock.stock_brand %></td>
-        <td><%= stock.stock_purchased_amount %></td>
-        <td><%= stock.stock_used_amount %></td>
-        <td><%= stock.stock_present_amount %></td>
+        <td><%= "#{stock.stock_purchased_amount} 袋" %></td>
+        <td><%= "#{stock.stock_used_amount} 袋" %></td>
+        <td><%= "#{stock.stock_present_amount} 袋" %></td>
         <td><%= stock.stock_quality %></td>
         <td><%= stock.stock_memorandum %></td>
         

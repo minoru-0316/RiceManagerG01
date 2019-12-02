@@ -4,7 +4,7 @@ class FarmersController < ApplicationController
 
     
     def index
-        @farmers = Farmer.all
+        @farmers = Farmer.all.order('created_at DESC')
     end
 
     

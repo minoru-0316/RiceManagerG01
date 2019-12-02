@@ -23,9 +23,8 @@
 <div class="container">
 
 
-
+<p class="bg-light pl-2"> 商品ID：<%= @item.id %> </p>
 <h2> 商品名：<%= @item.item_name %> </h2>
-<p> ID：<%= @item.id %> </p>
 <p> 単価（税別）：<%= @item.item_price_without_tax %> </p>
 <p> 単価（税込み：8％）：<%= (@item.item_price_without_tax*1.08).floor %> </p>
 <p> 備考：<%= @item.item_memorandum %> </p>

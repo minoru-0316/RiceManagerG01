@@ -25,6 +25,7 @@
 </div>
 
 <div class="container">
+<p class="bg-light pl-2"> Job ID：<%= @sale.id %> </p>
 
 <div>完了フラグ：
     <% if @sale.is_done == false %>
@@ -33,11 +34,6 @@
     <p class="text-primary">完了済み</p>
     <% end %>
 </div>
-
-<p>
-  <strong>ID：</strong>
-  <%= @sale.id %>
-</p>
 
 <p>
   <strong>入力者id：</strong>
