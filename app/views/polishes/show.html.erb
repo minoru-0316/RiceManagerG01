@@ -24,7 +24,9 @@
 <p class="bg-light pl-2"> 精米ID：<%= @polish.id %> </p>
 
 <h2> 精米日：<%= @polish.polish_day %> </h2>
-<p class="strong" style="font-size:24px"> 精米数（袋）：<%= @polish.polish_amount_total %> </p>
+<p class="strong" style="font-size:24px"> 精米数（袋）：<%= @polish.polish_amount_total %>
+<p class="strong" style="font-size:24px"> 精米メモ： 
+<textarea cols="30" rows="3"><%= @polish.polish_memorandum %></textarea></p>
 <hr>
 <div class="polish_breakdown">
     <h2>　内訳　</h2>

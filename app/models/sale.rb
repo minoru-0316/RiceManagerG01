@@ -17,7 +17,7 @@ class Sale < ApplicationRecord
         validates :item_name
         validates :sale_item_count
         validates :sale_item_amount
-        validates :polish_id
+        # validates :polish_id
     end
 
 end
