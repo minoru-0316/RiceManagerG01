@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_06_062514) do
+ActiveRecord::Schema.define(version: 2019_12_06_070045) do
 
   create_table "cliants", force: :cascade do |t|
     t.integer "user_id"
@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 2019_12_06_062514) do
 
   create_table "polishes", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "polish_amount_total"
+    t.decimal "polish_amount_total"
     t.integer "farmer_id"
     t.integer "polish_1_farmer_id"
     t.string "polish_1_farmer"
@@ -96,7 +96,7 @@ ActiveRecord::Schema.define(version: 2019_12_06_062514) do
     t.string "polish_3_amount"
     t.string "polish_4_amount"
     t.string "polish_5_amount"
-    t.date "polish_day"
+    t.datetime "polish_day"
     t.integer "stock_id"
   end
 
@@ -142,7 +142,7 @@ ActiveRecord::Schema.define(version: 2019_12_06_062514) do
     t.text "stock_memorandum"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.date "stock_arrivalday"
+    t.datetime "stock_arrivalday"
   end
 
   create_table "users", force: :cascade do |t|
