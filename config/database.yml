@@ -30,3 +30,29 @@ production:
   adapter: postgresql
   encoding: unicode
   pool: 5
+
+
+# default: &default
+#   adapter: postgresql
+#   encoding: unicode
+#   pool: 5
+#   # 以下、3行追加
+#   username: riceManagerGdb # 設定したPostgreSQL Accountと同一のもの
+#   password: k9o20dtJUeo # 設定したPostgreSQL Accountと同一のもの
+#   host: localhost
+# development:
+#   <<: *default
+#   database: riceManagerGdb
+
+# test:
+#   <<: *default
+#   database: riceManagerGdb
+
+
+
+#   production:
+# #半角スペース２個分の空白を開ける
+#   <<: *default
+#   adapter: postgresql
+#   encoding: unicode
+#   pool: 5
