@@ -46,7 +46,7 @@
       <% @stocks.each do |stock| %>
       <tr>
         <td><%=link_to stock.id, stock %></td>
-        <td><%= stock.stock_arrivalday %></td>
+        <td><%= stock.stock_arrivalday.strftime("%m月%d日") %></td>
         <td><%= stock.stock_brand %></td>
         <td><%= "#{stock.stock_purchased_amount} 袋" %></td>
         <td><%= "#{stock.stock_used_amount} 袋" %></td>

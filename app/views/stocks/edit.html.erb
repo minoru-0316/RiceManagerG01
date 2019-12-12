@@ -40,7 +40,7 @@
 <%= form_for(@stock) do |f| %>
 <div class="field">
   <%= f.label :入荷日 %><br>
-  <%= f.text_field :stock_arrivalday %>
+  <%= f.text_field :stock_arrivalday.strftime("%m月%d日")  %>
 </div>
 <div class="field">
   <%= f.label :生産者 %><br>

@@ -24,7 +24,7 @@
 <div class="container">
 
 <p class="bg-light pl-2"> 在庫ID：<%= @stock.id %> </p>
-<h2> 入荷日：<%= @stock.stock_arrivalday %> </h2>
+<h2> 入荷日：<%= @stock.stock_arrivalday.strftime("%m月%d日")  %> </h2>
 
 <p> 生産者ID：<%= link_to @stock.farmer_id, @farmer %> </p>
 <p> 生産者：<%= @stock.farmer.farmer_name %> </p>
