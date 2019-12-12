@@ -46,13 +46,6 @@
               <%= link_to 'ログアウト', destroy_user_session_path, method: :delete ,class:"headerTitle"  %>
             </button>
           </div>
-      <% else %>
-        <button type="button" class="headerBtn btn btn-lg mx-3 resistBtn">
-          <%= link_to 'registration', new_user_registration_path ,class:"headerTitle" %>
-        </button>
-        <button type="button" class="headerBtn btn btn-lg mx-3 loginBtn">
-          <%= link_to 'login', new_user_session_path ,class:"headerTitle" %>
-        </button>
         
       <% end %>
     </nav>
