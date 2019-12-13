@@ -40,8 +40,9 @@
 <%= form_for(@stock) do |f| %>
 <div class="field">
   <%= f.label :入荷日 %><br>
-  <%= f.text_field :stock_arrivalday %>
+  <%= f.datetime_select :stock_arrivalday %>
 </div>
+
 <div class="field">
   <%= f.label :生産者 %><br>
   <%= f.collection_select(:farmer_id, @farmers, :id, :farmer_name ) %>
