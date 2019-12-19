@@ -1,9 +1,9 @@
 class Polish < ApplicationRecord
 
-    # 使用した玄米の合計
-    def self.sumpolish  
-        sum(:polish_amount_total)
-    end
+    # # 使用した玄米の合計
+    # def self.sumpolish  
+    #     sum(:polish_amount_total)
+    # end
 
     
 
